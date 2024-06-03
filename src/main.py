@@ -44,14 +44,25 @@ def predict():
         "sheffield utd":24
     }
 
+    day_code_dict = {
+        "monday": 0,
+        "tuesday": 1,
+        "wednesday": 2,
+        "thursday": 3,
+        "friday": 4,
+        "saturday": 5,
+        "sunday": 6
+    }
+
     home_team_code = team_name_dict.get(data['home_team_code'])
     away_team_code = team_name_dict.get(data['away_team_code'])
+    day_code = day_code_dict.get(data['day_code'])
 
     new_data = {
         "HomeTeam_code": home_team_code,
         "AwayTeam_code": away_team_code,
         "Hour": data['hour'],
-        "Day_code": data['day_code']
+        "Day_code": day_code
     }
 
     new_df = pd.DataFrame([new_data])

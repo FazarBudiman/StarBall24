@@ -6,4 +6,4 @@ COPY . .
 EXPOSE 8080
 # Install gunicorn
 RUN pip install gunicorn
-CMD ["gunicorn", "-b", ":8080", "main:app"]
+CMD ["gunicorn", "-b", ":8080", "src.main:app"]
